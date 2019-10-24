@@ -13,8 +13,13 @@ class TodoController extends Controller
         // $param = 'Hi Guys';
         // return view('home',['params'=>$param]);
         $list_todo = Todo::latest()->get(); //select * from table 'todos' order by 'created_by'
+        $ongoing_list = Todo::where('status', '=', 0)->get();
+        $ongoing_count = count($ongoing_list);
+        $completed_task = count(Todo::where('status','=',1)->get());
         return view('home', [
-            'list_todo' => $list_todo
+            'list_todo' => $list_todo,
+            'ongoing_count' => $ongoing_count,
+            'completed_task'=> $completed_task,
         ]);
     }
 
@@ -38,7 +43,7 @@ class TodoController extends Controller
         return redirect()->route('home');
     }
 
-    public function update(Request $request ,Todo $todo)
+    public function update(Request $request, Todo $todo)
     {
         // dd( $request);
         $todo->title = $request->title;
@@ -47,14 +52,12 @@ class TodoController extends Controller
         $todo->save();
 
         return redirect()->route('home');
-        
     }
 
     public function edit(Todo $todo)
     {
-        
+
         return view('update', ['todo' => $todo]);
-        
     }
 
     public function delete(Todo $todo)

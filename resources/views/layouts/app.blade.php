@@ -10,6 +10,18 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/welcome">About</a>
+            </li>
+        </ul>
+    </nav>
+
+    <br>
 
     <div class="container my-5 p-5">
         {{$content}}

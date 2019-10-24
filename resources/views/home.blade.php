@@ -1,6 +1,20 @@
 <!-- {{-- search for target file and inject the content in @slot(<targetcontainer>) --}} -->
 @component('layouts.app')
 @slot('content')
+
+<div class="container">
+    <div class="row">
+        <div class="col" style="background-color:red;">
+            <h2>Number of task</h2>
+            <h3>{{$ongoing_count}}</h3>
+        </div>
+        <div class="col" style="background-color:yellow;">
+            <h2>Number of complete</h2>
+            <h3>{{$completed_task}}</h3>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-12">
         <a href="{{ route('create')}}" class="btn btn-primary">
@@ -29,18 +43,18 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$todo->title}}</td>
                     <td>{{$todo->description}}</td>
-                    <td >
+                    <td>
                         <!-- Option 1 -->
                         @php
-                            if($todo->status == 1){
-                            $badge = 'badge-success';
-                            $status = 'Completed';
-                            }
-                            else
-                            {
-                            $badge = 'badge-info';
-                            $status = 'In Progress';
-                            }
+                        if($todo->status == 1){
+                        $badge = 'badge-success';
+                        $status = 'Completed';
+                        }
+                        else
+                        {
+                        $badge = 'badge-info';
+                        $status = 'In Progress';
+                        }
                         @endphp
                         <span class="badge {{$badge}}">{{$status}}</span>
                         <!-- Option 2 -->
