@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Todo extends Model
+class Expense extends Model
 {
-   
+    protected $table = 'expense';
 }

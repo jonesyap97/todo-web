@@ -33,3 +33,8 @@ Route::name('store')->post('/store','TodoController@store');
 Route::name('delete')->get('/delete/{todo}','TodoController@delete');
 Route::name('edit')->get('/edit/{todo}','TodoController@edit');
 Route::name('update')->post('update/{todo}','TodoController@update');
+
+Route::name('expenses')->get('/expenses','ExpenseController@showMainPage');
+Route::name('new-expenses')->get('/newexpenses','ExpenseController@newExpensesPage');
+Route::name('store-expenses')->post('/store-expenses','ExpenseController@storeExpenses');
+Route::name('delete-expenses')->get('/delete-expenses/{expense}','ExpenseController@delete');

@@ -15,7 +15,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <textarea name="description" id="description" rows="5""  class="form-control @if($errors->has('description')) is-invalid @endif"> {{ old('description') }}</textarea>
+                                <textarea name="description" id="description" rows="5" class="form-control @if($errors->has('description')) is-invalid @endif"> {{ old('description') }}</textarea>
                                 @if($errors->has('description')) <span class="invalid-feedback">{{$errors->first('description')}}</span> @endif
                             </div>
                             <!-- add route name instead of url -->

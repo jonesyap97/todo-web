@@ -2,15 +2,32 @@
 @component('layouts.app')
 @slot('content')
 
-<div class="container">
-    <div class="row">
-        <div class="col" style="background-color:red;">
-            <h2>Number of task</h2>
-            <h3>{{$ongoing_count}}</h3>
+
+<div class="card-columns" style="margin:auto;">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>Number of task</h3>
         </div>
-        <div class="col" style="background-color:yellow;">
-            <h2>Number of complete</h2>
-            <h3>{{$completed_task}}</h3>
+        <div class="card-body  text-center">
+            <h2>{{$total_task}}</h2>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-warning text-white text-center">
+            <h3>Inprogress</h3>
+        </div>
+        <div class="card-body  text-center">
+            <h2>{{$ongoing_count}}</h2>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-success text-white text-center">
+            <h3>Number of complete</h3>
+        </div>
+        <div class="card-body text-center">
+            <h2>{{$completed_task}}</h2>
         </div>
     </div>
 </div>
